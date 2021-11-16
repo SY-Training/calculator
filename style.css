@@ -9,14 +9,69 @@ body {
 .calc {
     display: flex;
     flex-direction: column;
+    background-color: pink;
+    padding: 20px;
+
+}
+
+.screen {
+    background-color: gray;
+    padding: 5px;
+    text-align: right;
+    border: 1px;
+    border-style: solid;
 }
 
 .lower {
- display: flex;
- gap: 10px;
+    display: flex;
+    gap:15px;
+    padding-top: 20px;
 }
 
 .operators {
     display: flex;
     flex-direction: column;
+}
+
+.seven-row {
+    padding-bottom: 10px;
+}
+
+.four-row {
+    padding-bottom: 10px;
+}
+
+.one-row {
+    padding-bottom: 10px;
+}
+
+.c-row {
+    padding-bottom: 10px;
+}
+
+#add {
+    margin-bottom: 10px;
+    background-color: orange;
+}
+
+#subtract {
+    margin-bottom: 10px;
+    background-color: orange;
+}
+
+#multiply {
+    margin-bottom: 10px;
+    background-color: orange;
+}
+
+#divide {
+    background-color: orange;
+}
+
+#equal {
+    background-color: lightgreen;
+}
+
+#cancel {
+    background-color: red;
 }
