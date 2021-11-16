@@ -17,18 +17,17 @@ SCREEN.appendChild(SCREENTEXT);
 // The main function of the program
 function operate(n){
 
-    
-    let sum = parseInt(n);
-
-    //input[input.length] = sum;
-    input.push(sum);
-
-    for (i = 0; i <= input.length; i++){
-        SCREENTEXT.textContent = input[i];
-        console.log(input[i]);
+    if (num1 === 0) {
+        num1 = n;
+        SCREENTEXT.textContent = n;
     }
 
-    //console.log(input);
+    else {
+        num1 += n;
+
+        SCREENTEXT.textContent = num1;
+    }
+
 }
 
 function add (a, b)
