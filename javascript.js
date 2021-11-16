@@ -1,5 +1,5 @@
 let num1 = 0;
-
+const input = [];
 
 const numbers = document.querySelectorAll('button');
 numbers.forEach((number) => {
@@ -7,17 +7,6 @@ numbers.forEach((number) => {
             operate(number.id);
     })
 });
-
-/*
-const numbers = document.querySelectorAll('button');
-numbers.forEach((number) => {
-    number.addEventListener('click', () => {
-        console.log(number.id)
-        console.log(typeof(number.id));
-    })
-});
-*/
-
 
 const SCREEN = document.querySelector('.screen')
 const SCREENTEXT = document.createElement('div')
@@ -28,10 +17,18 @@ SCREEN.appendChild(SCREENTEXT);
 // The main function of the program
 function operate(n){
 
-    let sum = n;
-
     
-    console.log(n + ", Gotcha!");
+    let sum = parseInt(n);
+
+    //input[input.length] = sum;
+    input.push(sum);
+
+    for (i = 0; i <= input.length; i++){
+        SCREENTEXT.textContent = input[i];
+        console.log(input[i]);
+    }
+
+    //console.log(input);
 }
 
 function add (a, b)
