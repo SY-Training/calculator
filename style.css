@@ -1,0 +1,22 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding-top: 100px;
+    
+}
+
+.calc {
+    display: flex;
+    flex-direction: column;
+}
+
+.lower {
+ display: flex;
+ gap: 10px;
+}
+
+.operators {
+    display: flex;
+    flex-direction: column;
+}
