@@ -63,14 +63,25 @@ function operate(n){
         num2 = sum;
         num1 = 0;
         console.log(sum);
-        SCREENTEXT.textContent = sum;            
+        SCREENTEXT.textContent = sum;
+        // highlight operand colour.
+        // BUG: when hitting '+' twice i get NaN which breaks the function.         
+    }
+
+    else if (n === "subtract"){
+        let fin = parseInt(num1);        
+        sum = subtract(fin, num2);
+        num2 = sum;
+        num1 = 0;
+        console.log(sum);
+        SCREENTEXT.textContent = sum;
+        // highlight operand colour.
+        // BUG: when hitting '+' twice i get NaN which breaks the function.         
     }
 
     else {
         num1 += n;
-        console.log(num1);
-        //num2 = parseInt(num1) + sum;
-        
+        console.log(num1);        
         console.log(num2 + " is type " + typeof(num2));
         SCREENTEXT.textContent = num1;
         }
