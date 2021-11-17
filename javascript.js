@@ -22,18 +22,43 @@ updateDisplay();
 function operate(n){
 
     if (firstOperator === null && secondOperator === null) { // 1st click
-        num1 += n;
-        let sum = parseInt(num1);
-        updateDisplay(sum);
-        console.log("sum is " + sum + " and type " + typeof(sum));
         
         if (n === "add" || n === "divide" || n === "subtract" || n === "multiply"){
+            let sum = parseInt(num1, 10);
             result = sum;
             updateDisplay(result);
             sum = 0;
+            num1 = 0;
             firstOperator = n;
-            console.log(firstOperator);
+            //console.log("both null")
         }
+
+        else {
+            num1 += n;
+            let sum = parseInt(num1, 10);
+            
+            updateDisplay(sum);
+        }
+        console.log("both null")
+    }
+
+    else if (firstOperator != null && secondOperator === null){ // second click
+        console.log(firstOperator + typeof(firstOperator));
+        num1 += n;
+        let sum = parseInt(num1);
+        updateDisplay(sum);
+
+        if (n === "add" || n === "divide" || n === "subtract" || n === "multiply"){
+
+
+            console.log (sum + result) // WORKS!
+            // switch?
+            // second operator = n
+            // switch for second operator
+            // at and firstOperator = secondOperator
+            // secondOperator = null
+        }
+        console.log("not null")
     }
 
 
