@@ -1,7 +1,8 @@
 let num1 = 0;
 let num2 = 0;
-let sum = 0;
-let operand = "none";
+let firstOperator = null;
+let secondOperator = null;
+let result = 0;
 
 const numbers = document.querySelectorAll('button');
 numbers.forEach((number) => {
@@ -13,89 +14,36 @@ numbers.forEach((number) => {
 const SCREEN = document.querySelector('.screen')
 const SCREENTEXT = document.createElement('div')
 SCREENTEXT.classList.add('screenText');
-SCREENTEXT.textContent = num1;
 SCREEN.appendChild(SCREENTEXT);
+
+updateDisplay();
 
 // The main function of the program
 function operate(n){
 
-    /*
-    if (operand != "none"){  
-
-
-        if (num1 === 0) { // Add label if anotehr operator clicked to avoid crash
-            num1 = n;
-            SCREENTEXT.textContent = n;
-        }
-
-
-        else {
-            num1 += n;
-            SCREENTEXT.textContent = num1;
-        }
-
-        switch (operand){
-            case "add":
-                sum = add(num2, num1Int);
-                console.log(sum + " in switch." + "num1= " + num1Int + " num2= " +num2 );
-                num1 = 0;
-                num1 = 0;
-                SCREENTEXT.textContent = sum;
-                operand = "none";
-
-                break;
-        }
-
-        //parse before adding
-        //console.log(num2 + num1);
-
-    } */
-
-   // else {
-    if (num1 === 0) {
-        num1 = n;
-        SCREENTEXT.textContent = n;
-    }
-
-    else if (n === "add"){
-        let fin = parseInt(num1);        
-        sum = add(num2, fin);
-        num2 = sum;
-        num1 = 0;
-        console.log(sum);
-        SCREENTEXT.textContent = sum;
-        // highlight operand colour.
-        // BUG: when hitting '+' twice i get NaN which breaks the function.         
-    }
-
-    else if (n === "subtract"){
-        let fin = parseInt(num1);   
-        console.log("fin is " + fin + " num2 is " + num2);
-        if (num2 === 0){
-            console.log("yo");
-            num2 = fin;
-            num1 = 0;
-        }
-
-        else {
-            sum = subtract(num2, fin);
-            num2 = sum;        
-            num1 = 0;
-            console.log(sum);
-            SCREENTEXT.textContent = sum;
-            // highlight operand colour.
-            // BUG: when hitting '+' twice i get NaN which breaks the function.  
-        }       
-    }
-
-    else {
+    if (firstOperator === null && secondOperator === null) { // 1st click
         num1 += n;
-        console.log(num1);        
-        console.log(num2 + " is type " + typeof(num2));
-        SCREENTEXT.textContent = num1;
+        let sum = parseInt(num1);
+        updateDisplay(sum);
+        console.log("sum is " + sum + " and type " + typeof(sum));
+        
+        if (n === "add" || n === "divide" || n === "subtract" || n === "multiply"){
+            result = sum;
+            updateDisplay(result);
+            sum = 0;
+            firstOperator = n;
+            console.log(firstOperator);
         }
-    //}
+    }
 
+
+}
+
+function updateDisplay(n) {
+    SCREENTEXT.textContent = n;
+    if (!n){
+        SCREENTEXT.textContent = 0;
+    }
 }
 
 function add (a, b)
