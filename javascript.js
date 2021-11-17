@@ -1,5 +1,6 @@
 let num1 = 0;
 let num2 = 0;
+let sum = 0;
 let operand = "none";
 
 const numbers = document.querySelectorAll('button');
@@ -18,6 +19,7 @@ SCREEN.appendChild(SCREENTEXT);
 // The main function of the program
 function operate(n){
 
+    /*
     if (operand != "none"){  
 
 
@@ -34,34 +36,45 @@ function operate(n){
 
         switch (operand){
             case "add":
+                sum = add(num2, num1Int);
+                console.log(sum + " in switch." + "num1= " + num1Int + " num2= " +num2 );
                 num1 = 0;
-                num1 += n;
-                add(num2 + num1);
+                num1 = 0;
+                SCREENTEXT.textContent = sum;
+                operand = "none";
+
                 break;
         }
 
         //parse before adding
         //console.log(num2 + num1);
 
+    } */
+
+   // else {
+    if (num1 === 0) {
+        num1 = n;
+        SCREENTEXT.textContent = n;
+    }
+
+    else if (n === "add"){
+        let fin = parseInt(num1);        
+        sum = add(num2, fin);
+        num2 = sum;
+        num1 = 0;
+        console.log(sum);
+        SCREENTEXT.textContent = sum;            
     }
 
     else {
-        if (num1 === 0) {
-            num1 = n;
-            SCREENTEXT.textContent = n;
+        num1 += n;
+        console.log(num1);
+        //num2 = parseInt(num1) + sum;
+        
+        console.log(num2 + " is type " + typeof(num2));
+        SCREENTEXT.textContent = num1;
         }
-
-        else if (n === "add"){
-            num2 = num1;
-            num1 = 0;
-            operand = "add";
-        }
-
-        else {
-            num1 += n;
-            SCREENTEXT.textContent = num1;
-        }
-    }
+    //}
 
 }
 
