@@ -69,14 +69,23 @@ function operate(n){
     }
 
     else if (n === "subtract"){
-        let fin = parseInt(num1);        
-        sum = subtract(fin, num2);
-        num2 = sum;
-        num1 = 0;
-        console.log(sum);
-        SCREENTEXT.textContent = sum;
-        // highlight operand colour.
-        // BUG: when hitting '+' twice i get NaN which breaks the function.         
+        let fin = parseInt(num1);   
+        console.log("fin is " + fin + " num2 is " + num2);
+        if (num2 === 0){
+            console.log("yo");
+            num2 = fin;
+            num1 = 0;
+        }
+
+        else {
+            sum = subtract(num2, fin);
+            num2 = sum;        
+            num1 = 0;
+            console.log(sum);
+            SCREENTEXT.textContent = sum;
+            // highlight operand colour.
+            // BUG: when hitting '+' twice i get NaN which breaks the function.  
+        }       
     }
 
     else {
