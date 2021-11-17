@@ -30,35 +30,71 @@ function operate(n){
             sum = 0;
             num1 = 0;
             firstOperator = n;
-            //console.log("both null")
         }
 
         else {
             num1 += n;
-            let sum = parseInt(num1, 10);
-            
+            let sum = parseInt(num1, 10);            
             updateDisplay(sum);
         }
-        console.log("both null")
     }
 
     else if (firstOperator != null && secondOperator === null){ // second click
-        console.log(firstOperator + typeof(firstOperator));
         num1 += n;
         let sum = parseInt(num1);
         updateDisplay(sum);
 
         if (n === "add" || n === "divide" || n === "subtract" || n === "multiply"){
 
+            secondOperator = n;
 
-            console.log (sum + result) // WORKS!
-            // switch?
-            // second operator = n
-            // switch for second operator
-            // at and firstOperator = secondOperator
-            // secondOperator = null
+            switch(firstOperator){
+                case "add":
+                   result = add(sum, result)
+                   console.log("in switch " + result);
+                   updateDisplay(result);
+                   firstOperator = secondOperator;
+                   secondOperator = null;
+                   sum = 0;
+                   num1 = 0;
+                   break;
+
+                case "subtract":
+                    result = subtract(result, sum)
+                    console.log("in switch " + result);
+                    updateDisplay(result);
+                    firstOperator = secondOperator;
+                    secondOperator = null;
+                    sum = 0;
+                    num1 = 0;
+                    break;
+                
+                case "multiply":
+                    result = multiply(result, sum);
+                    console.log("in switch " + result);
+                    updateDisplay(result);
+                    firstOperator = secondOperator;
+                    secondOperator = null;
+                    sum = 0;
+                    num1 = 0;
+                    break;
+                
+                case "divide":
+                    result = divide(result, sum);
+                    console.log("in switch " + result);
+                    updateDisplay(result);
+                    firstOperator = secondOperator;
+                    secondOperator = null;
+                    sum = 0;
+                    num1 = 0;
+                    break;
+                
+
+
+            }
+
         }
-        console.log("not null")
+
     }
 
 
