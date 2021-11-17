@@ -21,9 +21,18 @@ updateDisplay();
 // The main function of the program
 function operate(n){
 
-    if (firstOperator === null && secondOperator === null) { // 1st click
+    if (n === "cancel"){
+        result = 0;
+        num1 = 0;
+        firstOperator = null;
+        secondOperator= null;
+        updateDisplay();
+    }
+
+    else if (firstOperator === null && secondOperator === null) { // 1st click
         
         if (n === "add" || n === "divide" || n === "subtract" || n === "multiply"){
+
             let sum = parseInt(num1, 10);
             result = sum;
             updateDisplay(result);
@@ -44,9 +53,14 @@ function operate(n){
         let sum = parseInt(num1);
         updateDisplay(sum);
 
-        if (n === "add" || n === "divide" || n === "subtract" || n === "multiply"){
+        
+
+        if (n === "add" || n === "divide" || n === "subtract" || n === "multiply" || n === "equal"){
+
 
             secondOperator = n;
+            
+            console.log(secondOperator + "  " + firstOperator);
 
             switch(firstOperator){
                 case "add":
@@ -88,14 +102,13 @@ function operate(n){
                     sum = 0;
                     num1 = 0;
                     break;
-                
-
-
             }
+            
 
         }
 
     }
+
 
 
 }
