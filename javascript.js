@@ -29,6 +29,10 @@ function operate(n){
         updateDisplay();
     }
 
+    else if (firstOperator === null && n === "equal"){
+        n = "cancel";
+    }
+
     else if (firstOperator === null && secondOperator === null) { // 1st click
         
         if (n === "add" || n === "divide" || n === "subtract" || n === "multiply"){
@@ -48,6 +52,43 @@ function operate(n){
         }
     }
 
+    else if (n === "equal" && firstOperator != null){
+        let sum = parseInt(num1);
+        switch(firstOperator){
+            case "add":
+               result = add(sum, result);
+               updateDisplay(result);
+               secondOperator = null;
+               sum = 0;
+               num1 = 0;
+               break;
+
+            case "subtract":
+                result = subtract(result, sum)
+                updateDisplay(result);
+                secondOperator = null;
+                sum = 0;
+                num1 = 0;
+                break;
+            
+            case "multiply":
+                result = multiply(result, sum);
+                updateDisplay(result);
+                secondOperator = null;
+                sum = 0;
+                num1 = 0;
+                break;
+            
+            case "divide":
+                result = divide(result, sum);
+                updateDisplay(result);
+                secondOperator = null;
+                sum = 0;
+                num1 = 0;
+                break;
+        }
+    }
+
     else if (firstOperator != null && secondOperator === null){ // second click
         num1 += n;
         let sum = parseInt(num1);
@@ -55,7 +96,7 @@ function operate(n){
 
         
 
-        if (n === "add" || n === "divide" || n === "subtract" || n === "multiply" || n === "equal"){
+        if (n === "add" || n === "divide" || n === "subtract" || n === "multiply"){
 
 
             secondOperator = n;
