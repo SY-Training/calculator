@@ -154,11 +154,23 @@ function operate(n){
 
 }
 
-function updateDisplay(n) {
-    SCREENTEXT.textContent = n;
+function updateDisplay(n) {      
+
     if (!n){
         SCREENTEXT.textContent = 0;
+
+        //Round to 12 places. 
     }
+    
+    let b = n.toString()
+    SCREENTEXT.textContent = b;
+    console.log(b);
+
+    if (b.length > 11){
+        SCREENTEXT.textContent = b.substring(0, 11);
+    }
+
+
 }
 
 function add (a, b)
