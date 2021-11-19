@@ -159,7 +159,6 @@ function updateDisplay(n) {
     if (!n){
         SCREENTEXT.textContent = 0;
 
-        //Round to 12 places. 
     }
     
     let b = n.toString()

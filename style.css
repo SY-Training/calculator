@@ -14,23 +14,29 @@ button {
 .calc {
     display: flex;
     flex-direction: column;
-    background-color: pink;
-    padding: 20px;
+    background-color: rgb(163, 163, 163);
+    padding: 8px;
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 2px;
+    
 
 }
 
 .screen {
-    background-color: gray;
+    background-color: rgb(234, 234, 234);
     font-size: 50px;
     padding: 5px;
     text-align: right;
     border: 1px;
     border-style: solid;
+    border-width: 3px;
+    border-radius: 5px;
 }
 
 .lower {
     display: flex;
-    gap:15px;
+    gap:5px;
     padding-top: 20px;
 }
 
@@ -40,44 +46,84 @@ button {
 }
 
 .seven-row {
-    padding-bottom: 10px;
+    padding-bottom: 2px;
+
+    
+}
+
+.seven-row > button {
+    background-color: rgb(162, 214, 230);
+    border-style: solid;
+    border-color: rgb(56, 94, 249);
+    border-radius: 10px;
+    border-width:4px;
+    font-size: 38px;    
 }
 
 .four-row {
-    padding-bottom: 10px;
+    padding-bottom: 2px;
+}
+
+.four-row > button {
+    background-color: rgb(162, 214, 230);
+    border-style: solid;
+    border-color: rgb(56, 94, 249);
+    border-radius: 10px;
+    border-width:4px;
+    font-size: 38px;
 }
 
 .one-row {
-    padding-bottom: 10px;
+    padding-bottom: 2px;
+}
+
+.one-row > button {
+    background-color: rgb(162, 214, 230);
+    border-style: solid;
+    border-color: rgb(56, 94, 249);
+    border-radius: 10px;
+    border-width:4px;
+    font-size: 38px;
 }
 
 .c-row {
-    padding-bottom: 10px;
+    padding-bottom: 2px;
 }
 
-#add {
-    margin-bottom: 10px;
+.operators > button {
+    margin-bottom: 2px;
     background-color: orange;
+    border-style: solid;
+    border-width: 4px;
+    border-color: rgb(244, 102, 0);
+    border-radius: 10px;
+    font-size: 38px;
 }
 
-#subtract {
-    margin-bottom: 10px;
-    background-color: orange;
+#zero {
+    background-color: rgb(162, 214, 230);
+    border-style: solid;
+    border-color: rgb(56, 94, 249);
+    border-radius: 10px;
+    border-width:4px;
+    font-size: 38px;
 }
 
-#multiply {
-    margin-bottom: 10px;
-    background-color: orange;
-}
-
-#divide {
-    background-color: orange;
-}
 
 #equal {
     background-color: lightgreen;
+    border-style: solid;
+    border-width: 4px;
+    border-radius: 10px;
+    border-color: rgb(37, 149, 29);
+    font-size: 38px;
 }
 
 #cancel {
-    background-color: red;
+    background-color: rgb(253, 36, 40);
+    border-style: solid;
+    border-width: 4px;
+    border-radius: 10px;
+    border-color: rgb(167, 0, 3);
+    font-size: 38px;
 }
