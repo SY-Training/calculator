@@ -60,6 +60,10 @@ button {
     font-size: 38px;    
 }
 
+.seven-row > button:active {
+    background-color: rgb(190, 253, 231);
+}
+
 .four-row {
     padding-bottom: 2px;
 }
@@ -73,6 +77,10 @@ button {
     font-size: 38px;
 }
 
+.four-row > button:active {
+    background-color: rgb(190, 253, 231);
+}
+
 .one-row {
     padding-bottom: 2px;
 }
@@ -84,6 +92,10 @@ button {
     border-radius: 10px;
     border-width:4px;
     font-size: 38px;
+}
+
+.one-row > button:active {
+    background-color: rgb(190, 253, 231);
 }
 
 .c-row {
@@ -100,7 +112,11 @@ button {
     font-size: 38px;
 }
 
-#zero {
+.operators > button:focus {
+    background-color: rgb(255, 183, 61);
+}
+
+.zero {
     background-color: rgb(162, 214, 230);
     border-style: solid;
     border-color: rgb(56, 94, 249);
@@ -109,6 +125,9 @@ button {
     font-size: 38px;
 }
 
+.zero {
+    background-color: rgb(190, 253, 231);
+}
 
 #equal {
     background-color: lightgreen;
@@ -119,6 +138,10 @@ button {
     font-size: 38px;
 }
 
+#equal:active {
+    background-color: rgb(195, 254, 159)
+}
+
 #cancel {
     background-color: rgb(253, 36, 40);
     border-style: solid;
@@ -126,4 +149,8 @@ button {
     border-radius: 10px;
     border-color: rgb(167, 0, 3);
     font-size: 38px;
+}
+
+#cancel:active {
+    background-color: rgb(251, 136, 138);
 }
